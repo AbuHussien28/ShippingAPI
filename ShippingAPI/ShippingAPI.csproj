@@ -22,9 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\" />
     <Folder Include="Interfaces\" />
     <Folder Include="DTOS\" />
-    <Folder Include="Data\" />
     <Folder Include="Helpers\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Repositories\" />

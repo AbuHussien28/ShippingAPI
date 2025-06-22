@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using ShippingAPI.Data;
+
 namespace ShippingAPI
 {
     public class Program
@@ -10,6 +13,8 @@ namespace ShippingAPI
             // Add services to the container.
 
             builder.Services.AddControllers();
+            builder.Services.AddDbContext<ShippingContext>(options =>
+                options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("Shipping")));
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
 
