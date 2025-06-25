@@ -12,10 +12,6 @@ namespace ShippingAPI.Models
         [StringLength(100)]
         public string Name { get; set; } = string.Empty;
 
-        [ForeignKey("Region")]
-        public int RegionId { get; set; }
-
-        public virtual Region Region { get; set; } = null!;
         public virtual ICollection<City> Cities { get; set; } = new List<City>();
     }
 }

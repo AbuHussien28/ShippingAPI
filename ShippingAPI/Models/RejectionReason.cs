@@ -11,6 +11,6 @@ namespace ShippingAPI.Models
         [StringLength(200)]
         public string Reason { get; set; } = string.Empty;
 
-        public virtual ICollection<OrderRejection> OrderRejections { get; set; } = new List<OrderRejection>();
+        public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

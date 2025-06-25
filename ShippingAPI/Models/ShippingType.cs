@@ -13,12 +13,11 @@ namespace ShippingAPI.Models
         public string TypeName { get; set; } = string.Empty;
 
         [Column(TypeName = "Money")]
-        public decimal Cost { get; set; }
+        public decimal AdditionalCost { get; set; }
 
         public int EstimatedDays { get; set; }
 
-        [Column(TypeName = "decimal(10,2)")]
-        public decimal? FixedWeight { get; set; }
+        public bool isActive { get; set; }= false;
 
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
     }
