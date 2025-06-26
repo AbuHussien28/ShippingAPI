@@ -24,6 +24,7 @@ namespace ShippingAPI.UnitOfWorks
         public UserGroupPermissionRepo userGroupPermissionRepo;
         public UserGroupRepo userGroupRepo;
         public WeightRepo weightRepo;
+        public regionRepo regionRepo;
 
         public UnitOfWork(ShippingContext context) {
             this.context = context;
@@ -38,6 +39,16 @@ namespace ShippingAPI.UnitOfWorks
         //        return studentRepo;
         //    }
         //}
+
+        public regionRepo RegionRepo
+        {
+            get
+            {
+                if (regionRepo == null)
+                    regionRepo = new regionRepo(context);
+                return regionRepo;
+            }
+        }
         public AccountTransactionRepo AccountTransactionRepo
         {
             get
