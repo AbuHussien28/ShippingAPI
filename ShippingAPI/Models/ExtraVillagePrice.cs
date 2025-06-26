@@ -10,9 +10,6 @@ namespace ShippingAPI.Models
 
         [Column(TypeName = "Money")]
         public decimal Value { get; set; }
-
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
         public bool IsActive { get; set; } = true;
     }
 }
