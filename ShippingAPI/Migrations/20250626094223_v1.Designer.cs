@@ -12,7 +12,7 @@ using ShippingAPI.Data;
 namespace ShippingAPI.Migrations
 {
     [DbContext(typeof(ShippingContext))]
-    [Migration("20250622093537_v1")]
+    [Migration("20250626094223_v1")]
     partial class v1
     {
         /// <inheritdoc />

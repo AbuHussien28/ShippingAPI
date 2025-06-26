@@ -23,8 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="DTOS\" />
     <Folder Include="Helpers\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Services\" />

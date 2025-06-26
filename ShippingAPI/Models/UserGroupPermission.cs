@@ -13,9 +13,6 @@ namespace ShippingAPI.Models
 
         [ForeignKey("Permission")]
         public int PermissionId { get; set; }
-
-        public DateTime AssignedAt { get; set; } = DateTime.UtcNow;
-
         public virtual UserGroup UserGroup { get; set; } = null!;
         public virtual Permission Permission { get; set; } = null!;
     }
