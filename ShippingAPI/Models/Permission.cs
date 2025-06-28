@@ -14,6 +14,6 @@ namespace ShippingAPI.Models
         [StringLength(200)]
         public string? Description { get; set; }
 
-        public virtual ICollection<UserGroupPermission> UserGroupPermissions { get; set; } = new List<UserGroupPermission>();
+        public virtual ICollection<AdminGroupPermission> UserGroupPermissions { get; set; } = new List<AdminGroupPermission>();
     }
 }
