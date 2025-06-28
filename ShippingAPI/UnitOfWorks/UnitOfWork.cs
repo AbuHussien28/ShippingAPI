@@ -1,4 +1,5 @@
 ﻿using ShippingAPI.Data;
+using ShippingAPI.Models;
 using ShippingAPI.Repositories;
 
 namespace ShippingAPI.UnitOfWorks
@@ -8,36 +9,34 @@ namespace ShippingAPI.UnitOfWorks
         ShippingContext context;
 
         public AccountTransactionRepo accountTransactionRepo;
+        public AdminGroupRepo adminGroupRepo;
+        public AdminGroupPermissionRepo adminGroupPermissionRepo;
+        public AdminProfileRepo adminProfileRepo;
+        public ApplicationUserRepo applicationUserRepo;
         public BankRepo bankRepo;
         public BranchRepo branchRepo;
         public CityRepo cityRepo;
         public CommissionSettingRepo commissionSettingRepo;
+        public CourierBranchRepo courierBranchRepo;
+        public CourierGovernorateRepo courierGovernorateRepo;
+        public CourierProfileRepo courierProfileRepo;
         public CustomPriceRepo customPriceRepo;
         public ExtraVillagePriceRepo extraVillagePriceRepo;
         public FinancialTransferRepo financialTransferRepo;
         public GovernateRepo governateRepo;
-        public OrderRejectionRepo orderRejectionRepo;
         public OrderRepo orderRepo;
+        public OrderItemRepo orderItemRepo;
         public PermissionRepo permissionRepo;
+        public RejectionReasonRepo rejectionReasonRepo;
         public SafeRepo safeRepo;
         public ShippingTypeRepo shippingTypeRepo;
-        public UserGroupPermissionRepo userGroupPermissionRepo;
-        public UserGroupRepo userGroupRepo;
+        public TraderProfileRepo traderProfileRepo;
         public WeightRepo weightRepo;
 
         public UnitOfWork(ShippingContext context) {
             this.context = context;
         }
 
-        //public StudentRepo StudentRepo
-        //{
-        //    get
-        //    {
-        //        if (studentRepo == null)
-        //            studentRepo = new StudentRepo(context);
-        //        return studentRepo;
-        //    }
-        //}
         public AccountTransactionRepo AccountTransactionRepo
         {
             get
@@ -48,7 +47,43 @@ namespace ShippingAPI.UnitOfWorks
                 
             }
         }
+        public AdminGroupRepo AdminGroupRepo
+        {
+            get { 
+                if(adminGroupRepo == null)
+                    adminGroupRepo = new AdminGroupRepo(context);
+                return adminGroupRepo;
+            }
+        }
 
+        public AdminGroupPermissionRepo AdminGroupPermissionRepo
+        {
+            get
+            {
+                if (adminGroupPermissionRepo == null)
+                    adminGroupPermissionRepo = new AdminGroupPermissionRepo(context);
+                return adminGroupPermissionRepo;
+            }
+        }
+
+        public AdminProfileRepo AdminProfileRepo
+        {
+            get
+            {
+                if (adminProfileRepo == null)
+                    adminProfileRepo = new AdminProfileRepo(context);
+                return adminProfileRepo;
+            }
+        }
+        public ApplicationUserRepo ApplicationUserRepo
+        {
+            get
+            {
+                if (applicationUserRepo == null)
+                    applicationUserRepo = new ApplicationUserRepo(context);
+                return applicationUserRepo;
+            }
+        }
         public BankRepo BankRepo
         {
             get
@@ -89,7 +124,33 @@ namespace ShippingAPI.UnitOfWorks
                 return commissionSettingRepo;
             }
         }
-
+        public CourierBranchRepo CourierBranchRepo
+        {
+            get
+            {
+                if(courierBranchRepo == null)
+                    courierBranchRepo = new CourierBranchRepo(context);
+                return courierBranchRepo;
+            }
+        }
+        public CourierGovernorateRepo CourierGovernorateRepo
+        {
+            get
+            {
+                if (courierGovernorateRepo == null)
+                    courierGovernorateRepo = new CourierGovernorateRepo(context);
+                return courierGovernorateRepo;
+            }
+        }
+        public CourierProfileRepo CourierProfileRepo
+        {
+            get
+            {
+                if (courierProfileRepo == null)
+                    courierProfileRepo = new CourierProfileRepo(context);
+                return courierProfileRepo;
+            }
+        }
         public CustomPriceRepo CustomPriceRepo
         {
             get
@@ -130,16 +191,6 @@ namespace ShippingAPI.UnitOfWorks
             }
         }
 
-        public OrderRejectionRepo OrderRejectionRepo
-        {
-            get
-            {
-                if (orderRejectionRepo == null)
-                    orderRejectionRepo = new OrderRejectionRepo(context);
-                return orderRejectionRepo;
-            }
-        }
-
         public OrderRepo OrderRepo
         {
             get
@@ -149,7 +200,15 @@ namespace ShippingAPI.UnitOfWorks
                 return orderRepo;
             }
         }
-
+        public OrderItemRepo OrderItemRepo
+        {
+            get
+            {
+                if (orderItemRepo == null)
+                    orderItemRepo = new OrderItemRepo(context);
+                return orderItemRepo;
+            }
+        }
         public PermissionRepo PermissionRepo
         {
             get
@@ -159,7 +218,15 @@ namespace ShippingAPI.UnitOfWorks
                 return permissionRepo;
             }
         }
-
+        public RejectionReasonRepo RejectionReasonRepo
+        {
+            get
+            {
+                if (rejectionReasonRepo == null)
+                    rejectionReasonRepo = new RejectionReasonRepo(context);
+                return rejectionReasonRepo;
+            }
+        }
         public SafeRepo SafeRepo
         {
             get
@@ -179,26 +246,16 @@ namespace ShippingAPI.UnitOfWorks
                 return shippingTypeRepo;
             }
         }
-
-        public UserGroupPermissionRepo UserGroupPermissionRepo
+        public TraderProfileRepo TraderProfileRepo
         {
             get
             {
-                if (userGroupPermissionRepo == null)
-                    userGroupPermissionRepo = new UserGroupPermissionRepo(context);
-                return userGroupPermissionRepo;
+                if (traderProfileRepo == null)
+                    traderProfileRepo = new TraderProfileRepo(context);
+                return traderProfileRepo;
             }
         }
 
-        public UserGroupRepo UserGroupRepo
-        {
-            get
-            {
-                if (userGroupRepo == null)
-                    userGroupRepo = new UserGroupRepo(context);
-                return userGroupRepo;
-            }
-        }
 
         public WeightRepo WeightRepo
         {

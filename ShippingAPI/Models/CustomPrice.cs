@@ -6,13 +6,21 @@ namespace ShippingAPI.Models
     public class CustomPrice
     {
         [Key]
-        public int PriceId { get; set; }
+        public int Id { get; set; }
 
         [Column(TypeName = "Money")]
         public decimal Price { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        //تاجر 
+        [ForeignKey("TraderProfile")]
+        public string TraderId { get; set; }
+        public virtual TraderProfile TraderProfile { get; set; }
+
+        [ForeignKey("City")]
+        public int CityId { get; set; }
+        public virtual City City { get; set; }
 
         public bool IsActive { get; set; } = false;
+
     }
 }

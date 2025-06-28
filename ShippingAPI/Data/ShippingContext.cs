@@ -15,23 +15,28 @@ namespace ShippingAPI.Data
         {
         }
         public DbSet<Branch> Branches { get; set; } 
+        public DbSet<AccountTransaction> AccountTransactions { get; set; } 
         public DbSet<City> Cities { get; set; } 
         public DbSet<Order> Orders { get; set; } 
+        public DbSet<OrderItem> OrderItems { get; set; } 
         public DbSet<Bank> Banks { get; set; } 
         public DbSet<CommissionSetting> CommissionSettings{ get; set; }
         public DbSet<CustomPrice> CustomPrices { get; set; }
         public DbSet<ExtraVillagePrice> ExtraVillagePrice { get; set; }
         public DbSet<FinancialTransfer> FinancialTransfers { get; set; }
         public DbSet<Governorate> Governorates { get; set; }
-        public DbSet<OrderRejection> OrderRejection{ get; set; }
         public DbSet<Permission> Permissions { get; set; }
-        public DbSet<Region> Regions { get; set; }
         public DbSet<RejectionReason> RejectionReasons { get; set; }
-        public DbSet<Safe> Safe { get; set; }
+        public DbSet<Safe> Safes { get; set; }
         public DbSet<ShippingType> ShippingTypes { get; set; }
-        public DbSet<UserGroup> UserGroups { get; set; }
-        public DbSet<UserGroupPermission> RegioUserGroupPermissions { get; set; }
+        public DbSet<AdminGroup> AdminGroups { get; set; }
+        public DbSet<AdminProfile> AdminProfiles { get; set; }
+        public DbSet<AdminGroupPermission> AdminGroupPermissions { get; set; }
         public DbSet<Weight> Weights { get; set; }
+        public DbSet<TraderProfile> TraderProfiles { get; set; }
+        public DbSet<CourierProfile> CourierProfiles { get; set; }
+        public DbSet<CourierGovernorate> CourierGovernorates { get; set; }
+        public DbSet<CourierBranch> CourierBranches { get; set; }
 
     }
 }

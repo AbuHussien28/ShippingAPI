@@ -12,5 +12,7 @@ namespace ShippingAPI.Models
         public decimal Value { get; set; }
         [Column(TypeName = "Money")]
         public decimal PricePerKg { get; set; }
+
+        public virtual List<Order> Orders { get; set; } = new List<Order>();
     }
 }
